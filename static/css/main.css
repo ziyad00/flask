@@ -1,13 +1,14 @@
 body, html {
     margin: 0;
     font-family: sans-serif;
-    text-align: center;
-
+    
 }
 
 .content {
     margin: 0 auto;
     width: 400px;
+    text-align: center;
+
 }
 
 table, td, th {
@@ -30,8 +31,12 @@ td {
 
 .form {
     margin-top: 20px;
+    text-align: center;
+
 }
 
 #content {
     width: 70%;
+    text-align: center;
+
 }
