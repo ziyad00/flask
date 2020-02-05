@@ -2,3 +2,7 @@ heroku login
 pip install gunicorn
 pip freeze > requirements.txt
 git init
+git add .
+git commit -m ""
+git push heroku master
+heroku git:remote -a yourapp
