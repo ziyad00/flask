@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block body%}
+<div class="content">
+    <h1 style="text-align: center">Todo List</h1>
+        <div class="form" >
+            <h4>Add a new todo item:</h4>
+            <form action="{{ url_for('add') }}" method="POST">
+                <input type="text" name="todotext">
+                <input type="submit" value="Add Item">
+            </form>
+    </div>
+    <div>
+        <h2>Incomplete Items</h2>
+        <ul>
+
+            {% for todo in incomplete %}
+             <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+                <tr>
+                <td>{{ todo.text }}</td>
+                <td>
+                    <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
+                    <br>
+                    <a href="{{ url_for('update', id=todo.id) }}">Update</a>
+                      <br>
+                    <a href="{{ url_for('complete', id=todo.id) }}">Mark As Complete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </ul>
+    </table>
+        <h2>Completed Items</h2>
+                    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+                    {% for todo in complete %}
+
+                <tr>
+                <td>{{ todo.text }}</td>
+                <td>
+                    <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
+                    <br>
+                    <a href="{{ url_for('update', id=todo.id) }}">Update</a>
+                      </td>
+            </tr>
+
+            {% endfor %}
+                                            </table>
+
+
+    </div>
+    </div>
+{% endblock %}

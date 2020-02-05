@@ -1,0 +1,4 @@
+heroku login
+pip install gunicorn
+pip freeze > requirements.txt
+git init
