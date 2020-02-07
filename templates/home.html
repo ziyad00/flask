@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% block head%}
+    <title>Update</title>
+{% endblock %}
+
 {% block body%}
 <div class="container">
 <div class="content">
@@ -12,14 +16,14 @@
     </div>
     <div>
         <h2>Incomplete Items</h2>
-        <ul>
-
+        
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <th>Actions</th>
+                </tr>
             {% for todo in incomplete %}
-             <table>
-        <tr>
-            <th>Task</th>
-            <th>Actions</th>
-        </tr>
+       
                 <tr>
                 <td>{{ todo.text }}</td>
                 <td>
@@ -31,7 +35,6 @@
                 </td>
             </tr>
             {% endfor %}
-        </ul>
     </table>
         <h2>Completed Items</h2>
                     <table>
