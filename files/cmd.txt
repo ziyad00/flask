@@ -1,0 +1,15 @@
+heroku login
+pip install gunicorn
+pip freeze > requirements.txt
+git init
+git add .
+git commit -m ""
+git heroku create flasktodo3
+heroku git:remote -a yourapp
+git push heroku master
+
+
+db
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
+
